@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tpclone_flutter/constants/app_constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -69,9 +70,46 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text("Tom Etzel"),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.home,
+            color: Colors.white,
+          ),
+          onPressed: null,
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.notifications,
+              color: Colors.white,
+            ),
+            onPressed: null,
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              right: 16.0,
+              left: 16.0,
+            ),
+            child: PopupMenuButton(
+              child: CircleAvatar(
+                backgroundColor: Colors.green.shade300,
+                child: Text("TE"),
+              ),
+              itemBuilder: (BuildContext context) {
+                return AppConstants.MENU_ITEMS
+                    .map(
+                      (String item) => PopupMenuItem(
+                        child: Text(item),
+                        value: item,
+                      ),
+                    )
+                    .toList();
+              },
+            ),
+          ),
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
