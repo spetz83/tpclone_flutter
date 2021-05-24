@@ -10,35 +10,50 @@ class HomeScreen extends StatelessWidget {
       initialIndex: 1,
       length: 3,
       child: Scaffold(
-        appBar: TPAppbar(
-          tabBar: const TabBar(
-            tabs: <Widget>[
-              Tab(
-                text: "REVIEW",
-              ),
-              Tab(
-                text: "ACTIVE",
-              ),
-              Tab(
-                text: "INACTIVE",
-              ),
-            ],
-          ),
-        ),
-        body: const TabBarView(
-          children: <Widget>[
-            Center(
-              child: Text("It's cloudy here"),
+          appBar: TPAppbar(),
+          body: DefaultTabController(
+            length: 3,
+            child: Column(
+              children: [
+                Container(
+                  constraints: BoxConstraints(maxHeight: 150.0),
+                  child: Material(
+                    color: Colors.white,
+                    child: TabBar(
+                      labelColor: Colors.black87,
+                      unselectedLabelColor: Colors.black38,
+                      tabs: [
+                        Tab(
+                          text: "REVIEW",
+                        ),
+                        Tab(
+                          text: "ACTIVE",
+                        ),
+                        Tab(
+                          text: "INACTIVE",
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: const TabBarView(
+                    children: <Widget>[
+                      Center(
+                        child: Text("It's cloudy here"),
+                      ),
+                      Center(
+                        child: Text("It's rainy here"),
+                      ),
+                      Center(
+                        child: Text("It's sunny here"),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Center(
-              child: Text("It's rainy here"),
-            ),
-            Center(
-              child: Text("It's sunny here"),
-            ),
-          ],
-        ),
-      ),
+          )),
     );
   }
 }

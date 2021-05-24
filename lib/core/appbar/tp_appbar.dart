@@ -3,9 +3,8 @@ import 'package:tpclone_flutter/constants/app_constants.dart';
 
 class TPAppbar extends StatelessWidget implements PreferredSizeWidget {
   Key? key;
-  TabBar? tabBar;
 
-  TPAppbar({this.key, this.tabBar}) : super(key: key);
+  TPAppbar({this.key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,6 @@ class TPAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text("Tom Etzel"),
       centerTitle: true,
-      bottom: tabBar != null ? tabBar : null,
       leading: IconButton(
         icon: const Icon(
           Icons.home,
@@ -63,6 +61,5 @@ class TPAppbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize =>
-      new Size.fromHeight(kToolbarHeight + kMinInteractiveDimension);
+  Size get preferredSize => new Size.fromHeight(kToolbarHeight);
 }
