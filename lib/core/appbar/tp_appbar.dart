@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:simple_gravatar/simple_gravatar.dart';
 import 'package:tpclone_flutter/constants/app_constants.dart';
 
 class TPAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const TPAppbar({Key? key}) : super(key: key);
+  Key? key;
+  TabBar? tabBar;
+
+  TPAppbar({this.key, this.tabBar}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var gravatar = Gravatar('thomas.etzel@gmail.com');
-    var avatarUrl = gravatar.imageUrl(
+    //var gravatar = Gravatar('thomas.etzel@gmail.com');
+    /*var avatarUrl = gravatar.imageUrl(
       defaultImage: GravatarImage.retro,
       rating: GravatarRating.pg,
       fileExtension: true,
-    );
+    );*/
 
     return AppBar(
       title: Text("Tom Etzel"),
       centerTitle: true,
+      bottom: tabBar != null ? tabBar : null,
       leading: IconButton(
         icon: const Icon(
           Icons.home,
@@ -41,7 +44,7 @@ class TPAppbar extends StatelessWidget implements PreferredSizeWidget {
             child: CircleAvatar(
               backgroundColor: Colors.green.shade300,
               child: Text("TE"),
-              foregroundImage: NetworkImage(avatarUrl),
+              foregroundImage: NetworkImage("https://i.pravatar.cc/100"),
             ),
             itemBuilder: (BuildContext context) {
               return AppConstants.MENU_ITEMS
@@ -60,5 +63,6 @@ class TPAppbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => new Size.fromHeight(kToolbarHeight);
+  Size get preferredSize =>
+      new Size.fromHeight(kToolbarHeight + kMinInteractiveDimension);
 }

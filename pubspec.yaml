@@ -29,6 +29,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   simple_gravatar: ^1.1.0
+  firebase_core: ^1.2.0
+  firebase_crashlytics: ^2.0.4
 
 dev_dependencies:
   flutter_test:

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "522983756647",
+    "project_id": "tp-clone-flutter",
+    "storage_bucket": "tp-clone-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522983756647:android:be93edc31f54e8619bd5c2",
+        "android_client_info": {
+          "package_name": "com.spetz83.tpclone_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522983756647-9ok4miq4u2sdq7tki9kifcstf7ld7i93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spetz83.tpclone_flutter",
+            "certificate_hash": "d46a0bf7be0a658e418645b25eed6646d8368e06"
+          }
+        },
+        {
+          "client_id": "522983756647-v2jc3hkfas2fh1j4u6tri59dgdm1j5bd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQKXOdj9dk0v11ojx7bYDWHjRAhY6dHKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522983756647-v2jc3hkfas2fh1j4u6tri59dgdm1j5bd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
